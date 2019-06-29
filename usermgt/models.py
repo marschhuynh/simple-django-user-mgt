@@ -14,7 +14,7 @@ class Profile(models.Model):
     last_name = models.CharField(max_length=200)
     age = models.IntegerField()
     gender = models.PositiveSmallIntegerField(choices=GENDER)
-    photo = models.FileField(upload_to='media/photo/%Y/%m/%d', default="notfound")
+    photo = models.ImageField(upload_to='media/photo/%Y/%m/%d', default="notfound")
     resume = models.FileField(upload_to='media/resume/%Y/%m/%d', default="notfound")
 
 
@@ -28,7 +28,7 @@ class User(AbstractUser):
     last_name = models.CharField(max_length=200)
     age = models.IntegerField()
     gender = models.PositiveSmallIntegerField(choices=GENDER)
-    photo = models.FileField(upload_to='media/photo/%Y/%m/%d', default="notfound")
+    photo = models.ImageField(upload_to='media/photo/%Y/%m/%d', default="notfound")
     resume = models.FileField(upload_to='media/resume/%Y/%m/%d', default="notfound")
 
     username_validator = UnicodeUsernameValidator()
